@@ -1,0 +1,33 @@
+<div class="container mb-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">プロフィール編集</div>
+        <div class="card-body">
+          <%= form_with model: @user,:url => {:action => :update}, local:true do |f| %>
+            <div class="mb-3">
+              <%= f.label "ニックネーム", class: "form-label" %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label "写真", class: "form-label" %>
+              <%= f.file_field :image, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label "メールアドレス", class: "form-label" %>
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label "紹介文", class: "form-label" %>
+              <%= f.text_area :introduction, class: "form-control", rows: 3 %>
+            </div>
+            <div class="text-center">
+              <%= f.submit '編集内容を保存', class: "btn btn-primary" %>
+              <%= link_to " 退会する", unsubscribe_path, class: "btn btn-danger", type:"button" %>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

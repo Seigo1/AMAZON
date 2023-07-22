@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AMAZON</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YAMAZON</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="<%= asset_path('application.css') %>" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- font_awesome -->
+    <script src="https://kit.fontawesome.com/e8947900bd.js" crossorigin="anonymous"></script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-    <% if admin_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録(管理者)", new_admin_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン(管理者)", new_admin_session_path %>
-      </li>
-    <% end %>
+    <header class="bg-dark text-white py-3">
+      <%= render 'layouts/header' %>
+    </header>
+    <div>
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </div>
     <%= yield %>
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-3">
+      <!-- トップへ戻るボタン -->
+      <div class="container text-center">
+        <p class="mb-0">&copy; CopyRight 2023 Seigo inc.</p>
+        <ul class="list-inline mt-2">
+          <li class="list-inline-item"><a href="#">Home</a></li>
+          <li class="list-inline-item"><a href="#">Products</a></li>
+          <li class="list-inline-item"><a href="#">About Us</a></li>
+          <li class="list-inline-item"><a href="#">Contact</a></li>
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div id="page_top">
+        <a href="#"></a>
+      </div>
+    </footer>
   </body>
 </html>

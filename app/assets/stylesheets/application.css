@@ -13,3 +13,213 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+/* app/assets/stylesheets/custom.css */
+
+/* ヘッダー */
+header {
+  background-color: #343a40;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ヒーローセクション */
+section.hero {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+section.hero h2 {
+  font-size: 36px;
+}
+
+section.hero p {
+  font-size: 20px;
+}
+
+/* 人気商品セクション */
+section.popular-products {
+  padding: 50px 0;
+}
+
+section.popular-products h3 {
+  font-size: 28px;
+}
+
+/* カテゴリーセクション */
+section.categories {
+  padding: 50px 0;
+}
+
+section.categories h3 {
+  font-size: 28px;
+}
+
+/* お知らせセクション */
+section.announcements {
+  padding: 50px 0;
+}
+
+section.announcements h3 {
+  font-size: 28px;
+}
+
+/* お客様のレビューセクション */
+section.customer-reviews {
+  padding: 50px 0;
+}
+
+section.customer-reviews h3 {
+  font-size: 28px;
+}
+
+/* フッター */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  font-family: HiraMinProN-W6;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 15px;
+  font-size: 24px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+#page_top{
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  right: 0;
+  bottom: 100px;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #3f98ef;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #3f98ef;
+  color: #fff;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}

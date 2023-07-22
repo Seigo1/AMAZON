@@ -1,0 +1,36 @@
+<div class="container mb-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <% if current_user.id == @user.id %>
+            <h3 class="card-titler">マイページ</h3>
+          <% else %>
+            <h3 class="card-titler"><%= @user.name%>のページ</h3>
+          <% end %>
+          <div class="mb-3">
+            <label for="name" class="form-label">ニックネーム</label>
+            <input type="text" class="form-control" id="name" value="<%= @user.name %>" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="introduction" class="form-label">紹介文</label>
+            <textarea class="form-control" id="introduction" rows="3" readonly><%= @user.introduction %></textarea>
+          </div>
+          <% if current_user.id == @user.id %>
+          <div class="mb-3">
+            <label for="email" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control" id="email" value="<%= @user.email %>" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="value" class="form-label">残高</label>
+            <input type="text" class="form-control" id="value" value="<%= @user.value %>円" readonly>
+          </div>
+          <div class="text-center">
+            <%= link_to "編集する", edit_path(current_user.id), class: "btn btn-primary", type:"button" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

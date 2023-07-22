@@ -1,0 +1,28 @@
+<!-- ヘッダー -->
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <%= link_to root_path do %>
+      <h1 class="h4">YAMAZON</h1>
+    <% end %>
+    <% if admin_signed_in? %>
+    <nav>
+      <ul class="list-inline">
+        <li class="list-inline-item"><%= link_to "投稿一覧", type:"button" %></li>
+        <li class="list-inline-item"><%= link_to "ジャンル一覧", type:"button" %></li>
+        <li class="list-inline-item"><%= link_to "会員一覧", type:"button" %></li>
+        <li class="list-inline-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, type:"button" %></li>
+      </ul>
+    </nav>
+    <% elsif user_signed_in? %>
+      <li class="list-inline-item"><%= link_to "マイページ", show_path(current_user.id), type:"button" %></li>
+      <li class="list-inline-item"><%= link_to "カート", type:"button" %></li>
+      <li class="list-inline-item"><%= link_to "チャージ", chargeEdit_path(current_user.id), type:"button" %></li>
+      <li class="list-inline-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, type:"button" %></li>
+
+    <% else %>
+      <li class="list-inline-item"><%= link_to "トップ", root_path %></li>
+      <li class="list-inline-item"><%= link_to "ログイン", new_user_session_path, type:"button" %></li>
+      <li class="list-inline-item"><%= link_to "新規登録", new_user_registration_path, type:"button" %></li>
+    <% end %>
+  </div>
+</div>
